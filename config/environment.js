@@ -20,6 +20,7 @@ module.exports = function(environment) {
       // when it is created
     }
   };
+  
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
