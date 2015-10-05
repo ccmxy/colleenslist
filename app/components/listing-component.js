@@ -6,7 +6,7 @@ export default Ember.Component.extend({
     detailsShow: function(){
       this.set('areDetailsShowing', true);
     },
-    detailseHide: function() {
+    detailsHide: function() {
       this.set('areDetailsShowing', false);
     },
   delete(listing) {
