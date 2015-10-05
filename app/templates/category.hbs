@@ -1,1 +1,11 @@
 <h1> Welcome to {{model.name}} </h1>
+
+<h2>{{new-listing category=model save="save"}}</h2>
+
+<i><h4>Listings</h4></i>
+<hr>
+<ul class="list-group">
+  {{#each model.listings as |listing|}}
+ <li class="list-group-item">{{listing.title}}</li><hr>
+  {{/each}}
+</ul>
