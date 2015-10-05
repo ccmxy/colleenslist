@@ -2,7 +2,8 @@
 
 <ul>
   {{#each model as |category|}}
-    {{categories-component category=category}}
+    {{categories-component category=category destroyCategory="destroyCategory"}}
   {{/each}}
 </ul>
-We hope you find exactly what you're looking for in a place to stay.
+
+Click on a category to see its listings!
