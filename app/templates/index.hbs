@@ -2,8 +2,9 @@
 
 <ul>
   {{#each model as |category|}}
-    {{categories-component category=category destroyCategory="destroyCategory"}}
-    {{#link-to}}{{'category' category.id}}{{/link-to}}
+  {{#link-to 'category' category.id}}
+      {{categories-component category=category destroyCategory="destroyCategory"}}
+    {{/link-to}}
   {{/each}}
 </ul>
 
