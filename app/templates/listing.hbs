@@ -1,3 +1,7 @@
-Now what
 
-Welcome to {{model.title}}
+<h1>{{model.title}}</h1>
+<p>  {{listing.details}} </p>
+  <p><img src={{listing.image}}></p>
+
+
+  {{#link-to 'category' model.category.id}}Back to {{model.category.name}}{{/link-to}}
