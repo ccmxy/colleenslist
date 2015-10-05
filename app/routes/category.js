@@ -5,6 +5,12 @@ export default Ember.Route.extend({
     return this.store.findRecord('category', params.category_id);
   },
   actions: {
+  destroyListing(listing) {
+        listing.destroyRecord().then(function() {
+          category.save();
+        });
+        this.transitionTo('/:category_id', params.category);
+      },
     save(params) {
       debugger;
       var newListing = this.store.createRecord('listing', params);
