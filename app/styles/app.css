@@ -11,6 +11,10 @@ body {
   padding-top: 100px;
   background-color: #EAEAEA
 }
+
+.listing{
+  text-align: center;
+}
 /*.sidebar{
 	width: 20%;
 	float: left;
