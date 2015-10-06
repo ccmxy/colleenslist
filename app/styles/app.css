@@ -1,7 +1,12 @@
-body{
-  padding-top: 70px;
+
+/* navbar */
+.navbar-fixed-top {
+    background-color: #EAEAEA;
+    border-color: #4A094D;
 }
 
-head{
-  padding-top: 70px;
+.navbar-brand{
+  float: left;
+  float: top;
+  margin-top: 0px;
 }
