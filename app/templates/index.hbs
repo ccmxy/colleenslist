@@ -1,5 +1,4 @@
-<h1> Welcome to Craigslist!!!! </h1>
-
+<div class="sidebar">
 <ul>
   {{#each model as |category|}}
   {{#link-to 'category' category.id}}
@@ -7,6 +6,7 @@
     {{/link-to}}
   {{/each}}
 </ul>
+</div>
 
 Click on a category to see its listings!
 
