@@ -1,0 +1,68 @@
+<div class="btn-group" role="group" aria-label="...">
+  <button type="button" class="btn btn-default"{{action 'listFormShow' category}}>List</button>
+  <button type="button" class="btn btn-default" {{action 'thumbnailFormShow' category}}>Thumbnails</button>
+  <button type="button" class="btn btn-default"{{action 'galleryFormShow' category}}>Gallery</button>
+  <button type="button" class="btn btn-default"{{action 'showTheMap' category.listings}}>Map</button>
+</div>
+
+{{#if showList}}
+<ul class="list-group">
+  {{#each category.listings as |listing|}}
+  <!--Formally "listing-component"-->
+  <li class="list-group-item" {{action 'detailsShow'}}>
+    <span class="muted">{{format-date listing.date_added}}</span>
+    {{#link-to 'listing' listing.id}}
+      {{listing.title}}
+    {{/link-to}}
+    -
+    {{#if areDetailsShowing }}
+      {{listing.details}}
+        {{#if listing.hasImage}}
+          <p><img src={{listing.image}} {{action 'detailsHide'}}></p>
+        {{/if}}
+    {{else}}
+         <button {{action 'detailsShow'}}>Preview</button>
+    {{/if}}
+    {{#if listing.hasImage}}
+      <span class="pic"> pic </span>
+    {{/if}}
+    {{#if listing.hasMap}}
+      <span class="map"> map </span>
+    {{/if}}
+    <span{{action 'delete' listing}}>[x]</span>
+  </li>
+  <!--End of formally listing component-->
+  {{/each}}
+</ul>
+{{/if}}
+
+{{#if showThumbnail}}
+  <ul>
+    {{#each category.listings as |listing|}}
+      {{#if listing.hasImage}}
+        <p>
+          {{#link-to 'listing' listing.id}}
+            {{listing.title}}
+          {{/link-to}}
+        </p>
+        <p><img class="thumnail-image" src="{{listing.image}}"></p>
+        <p> {{listing.details}} </p>
+      {{/if}}
+    {{/each}}
+  </ul>
+{{/if}}
+
+{{#if showGallery}}
+<ul>
+  {{#each category.listings as |listing|}}
+    {{#if listing.hasImage}}
+    {{#link-to 'listing' listing.id}}
+      <p> {{listing.title}}</p>
+      {{/link-to}}
+      <p><img class="gallery-image" src="{{listing.image}}"></p>
+    {{/if}}
+  {{/each}}
+</ul>
+{{/if}}
+
+<div class="map-display"></div>

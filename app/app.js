@@ -15,4 +15,15 @@ App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
+
+
 export default App;
+
+Ember.Route.reopen({
+  model() {
+    return Ember.RSVP.hash({
+      categories: this.store.findAll('category'),
+    //  events:this.store.findAll('event')
+    });
+  }
+});

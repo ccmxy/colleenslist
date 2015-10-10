@@ -11,8 +11,8 @@ export default Ember.Route.extend({
         });
         this.transitionTo('/:category_id', params.category);
       },
+
     save(params) {
-      debugger;
       var newListing = this.store.createRecord('listing', params);
       var category = params.category;
       newListing.save().then(function() {

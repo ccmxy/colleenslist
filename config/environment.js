@@ -4,7 +4,15 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'craigslist',
     environment: environment,
-    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    contentSecurityPolicy: {
+      'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' https://*.firebaseio.com https://*.googleapis.com https://*.gstatic.com",
+      'font-src': "'self' https://*.gstatic.com",
+      'img-src': "'self' *",
+      'style-src': "'self' 'unsafe-inline' https://*.googleapis.com",
+      'frame-src': "'self' https://*.firebaseio.com"
+      },
     firebase: 'https://craigslistcolleen.firebaseio.com/',
     baseURL: '/',
     locationType: 'auto',
@@ -20,7 +28,7 @@ module.exports = function(environment) {
       // when it is created
     }
   };
-  
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -45,6 +53,8 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
+
+
 
   return ENV;
 };
