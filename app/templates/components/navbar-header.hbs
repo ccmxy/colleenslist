@@ -59,12 +59,13 @@
             <li>
             <span class="arrow">   >  </span>
 
-            <select>
-              <option value="yams">hur</option>
+            <span {{action 'categorySelected'}}>
+            <select id="categories">
               {{#each model.categories as |category|}}
-                <option value="yams2">{{category.name}}</option>
+                <option value={{category.id}}>{{category.name}}</option>
               {{/each}}
           </select>
+        </span>
 
 
             </li>
