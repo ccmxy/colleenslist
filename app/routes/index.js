@@ -15,5 +15,6 @@ export default Ember.Route.extend({
       category.destroyRecord();
       this.transitionTo('index');
     }
+
   }
 });

@@ -9,12 +9,9 @@ export default Ember.Component.extend({
        debugger;
        var e = document.getElementById("categories");
        var catId = e.options[e.selectedIndex].value;
-       //I have verified that catId contains the appropriate ID at this point.
-
-       //Where the error happens:
-    //  this.transitionTo('/category/' + catId);
-      //this.transitionTo(('/:question_id', params.question);
-	     this.transitionTo({path:'/category/:category_id'}, catId);
+       this.sendAction('goToCategory', catId);
+       //Note: Cannot transitionTo directly from a component,
+       // hence sending the action.
      }
    }
 });
