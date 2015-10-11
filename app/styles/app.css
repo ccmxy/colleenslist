@@ -45,6 +45,14 @@ body {
   color: #080
 }
 
+.option{
+  color: #C63D0F;
+}
+
+p.little{
+  font-size: smaller;
+  opacity: 0.5;
+}
 .muted{
   opacity: 0.5;
 }
