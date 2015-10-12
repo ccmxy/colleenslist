@@ -9,7 +9,7 @@
 <ul class="list-group">
   {{#each category.listings as |listing|}}
   <!--Formally "listing-component"-->
-  <li class="list-group-item" {{action 'detailsShow'}}>
+  <li class="list-group-item">
     <span class="muted">{{format-date listing.date_added}}</span>
     {{#link-to 'listing' listing.id}}
       {{listing.title}}

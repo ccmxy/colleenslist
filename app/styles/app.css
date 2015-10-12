@@ -30,6 +30,11 @@ body {
   height: auto;
 }
 
+.gallery-image{
+  max-width: 1000px;
+  height: auto
+}
+
 .map-display{
   display: none;
 }
@@ -67,6 +72,8 @@ p.little{
     padding: 0.25em;
     text-decoration: none;
 }
+
+
 /*.sidebar{
 	width: 20%;
 	float: left;
